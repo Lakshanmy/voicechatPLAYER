@@ -11,9 +11,9 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Hello {message.from_user.first_name}!
-I am 𝗖𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝘆𝗤𝘂𝗲𝗲𝗻𝗕𝗼𝘁 VC Music Player, an open-source bot that lets you play music in your Telegram groups.
+I am CyberHacker VoiceChat Song Player BOT, an open-source bot that lets you play music in your Telegram groups.
 Maintained by @sangramghangale ❤
-For source code Join our support group @TeLeTiPsOfficialOnTopicChat.
+For source code Join our support group @Cyber0Hacker.
 Use the buttons below to know more about me.
  </b>""",
       
@@ -27,15 +27,15 @@ Use the buttons below to know more about me.
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Group", url="https://t.me/TeLeTiPsOfficialOnTopicChat"
+                        "👥 Group", url="https://t.me/cyber0hacker"
                     ),
                     InlineKeyboardButton(
-                        "💾 Source code", url="https://github.com/sangramghangale/VCPlayerBot"
+                        "💾 Source code", url="https://github.com/kusalCY/VC-Player"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Join Channel", url="https://t.me/TeLeTiPsOfficialchannel"
+                        "Developer", url="https://t.me/AmKuSaL"
                     )
                 ]
             ]
