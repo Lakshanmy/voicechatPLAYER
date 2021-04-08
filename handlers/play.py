@@ -38,7 +38,7 @@ chat_id = None
 async def play(client: Client, message_: Message):
     audio = (message_.reply_to_message.audio or message_.reply_to_message.voice) if message_.reply_to_message else None
     chat_id=message_.chat.id
-    res = await message_.reply_te"Song is 🔄 Processing... 𝐵𝑜𝑡 𝐵𝑦 @𝐶𝑦𝑏𝑒𝑟0𝐻𝑎𝑐𝑘𝑒𝑟")
+    res = await message_.reply_text("song is🔄 Processing... Developed by @cyber0hacker")
 
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
@@ -78,14 +78,14 @@ async def play(client: Client, message_: Message):
 
     if message_.chat.id in tgcalls.pytgcalls.active_calls:
         position = sira.add(message_.chat.id, file_path)
-        await res.edit_text(f"song in #️⃣ Queued at position {position}.")
+        await res.edit_text(f"song in#️⃣ Queued at position {position}.")
     else:
-        await res.edit_text("Song is ▶️ Playing...")
+        await res.edit_text("song is▶️ Playing...")
         res.delete
         m = await client.send_photo(
         chat_id=message_.chat.id,
-        photo="https://telegra.ph/%F0%9D%91%AA%F0%9D%92%9A%F0%9D%92%83%F0%9D%92%86%F0%9D%92%93-%F0%9D%91%BD%F0%9D%91%AA-04-07",
-        caption=f"Playing Your song Via  [CyberPlayer](https://t.me/Cyber0Hacker).",
+        photo="https://telegra.ph/file/bfd3e51f44415da8875f3.jpg",
+        caption=f"Playing Your song Via  [✯𝗩𝗖𝗣𝗹𝗮𝘆✯](https://t.me/cyber0hacker).",
          ) 
         tgcalls.pytgcalls.join_group_call(message_.chat.id, file_path)
 
@@ -121,15 +121,15 @@ async def deezer(client: Client, message_: Message):
     if message_.chat.id in tgcalls.pytgcalls.active_calls:
         await res.edit("adding in queue")
         position = sira.add(message_.chat.id, file_path)
-        await res.edit_text(f"song in #️⃣ Queued at position {position}.")
+        await res.edit_text(f"song in#️⃣ Queued at position {position}.")
     else:
-        await res.edit_text("song is ▶️ Playing.....")
+        await res.edit_text("song is▶️ Playing.....")
         tgcalls.pytgcalls.join_group_call(message_.chat.id, file_path)
     await res.delete()
     m = await client.send_photo(
         chat_id=message_.chat.id,
         photo="final.png",
-        caption=f"Playing [{title}]({url}) Via [Deezer](https://t.me/Cyber0Hacker)."
+        caption=f"Playing [{title}]({url}) Via [Deezer](https://t.me/cyber0hacker)."
     ) 
     os.remove("final.png")
 # -----------------------------------------------------Jiosaavn-----------------------------------------------------------------
@@ -165,16 +165,16 @@ async def jiosaavn(client: Client, message_: Message):
     file_path= await convert(wget.download(slink))
     if message_.chat.id in tgcalls.pytgcalls.active_calls:
         position = sira.add(message_.chat.id, file_path)
-        await res.edit_text(f"song in #️⃣ Queued at position {position}.")
+        await res.edit_text(f"song in#️⃣ Queued at position {position}.")
     else:
-        await res.edit_text("Song is ▶️ Playing.....")
+        await res.edit_text("song is▶️ Playing.....")
         tgcalls.pytgcalls.join_group_call(message_.chat.id, file_path)
     await res.edit("Generating Thumbnail.")
     await generate_cover_square(requested_by, sname, ssingers, sduration, sthumb)
     await res.delete()
     m = await client.send_photo(
         chat_id=message_.chat.id,
-        caption=f"Playing {sname} Via [Jiosaavn](https://t.me/Cyber0Hacker)",
+        caption=f"Playing {sname} Via [Jiosaavn](https://t.me/cyber0hacker)",
         photo="final.png",
     )
     os.remove("final.png")
@@ -217,16 +217,16 @@ async def ytp(client: Client, message_: Message):
     file_path = await convert(download(link))
     if message_.chat.id in tgcalls.pytgcalls.active_calls:
         position = sira.add(message_.chat.id, file_path)
-        await res.edit_text(f"song in #️⃣ Queued at position {position}.")
+        await res.edit_text(f"song in#️⃣ Queued at position {position}.")
     else:
-        await res.edit_text("song is ▶️ Playing....")
+        await res.edit_text("song is▶️ Playing....")
         tgcalls.pytgcalls.join_group_call(message_.chat.id, file_path)
     await res.edit("Generating Thumbnail.")
     await generate_cover(requested_by, title, views, duration, thumbnail)
     res.delete
     m = await client.send_photo(
         chat_id=message_.chat.id,
-        caption=f"Playing `{query}` Via [YouTube](https://t.me/Cyber0Hacker)",
+        caption=f"Playing `{query}` Via [YouTube](https://t.me/cyber0hacker)",
         photo="final.png",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("Watch on youtube", url=link)]]
